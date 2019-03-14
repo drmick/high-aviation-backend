@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.1'
+ruby '2.5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
@@ -13,7 +13,7 @@ gem 'puma', '~> 3.11'
 gem 'devise-jwt', '~> 0.5.8'
 
 gem 'mina', require: false
-gem 'mina-puma', require: false,  github: 'untitledkingdom/mina-puma'
+#gem 'mina-puma', require: false,  github: 'untitledkingdom/mina-puma'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
