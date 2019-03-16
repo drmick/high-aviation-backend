@@ -1,7 +1,7 @@
 #!/usr/bin/env puma
-environment ENV['RAILS_ENV'] || 'production'
-pidfile "/var/www/high-aviation-club/current/shared/tmp/pids/puma.pid"
-stdout_redirect "/var/www/high-aviation-club/current/shared/tmp/log/stdout", "/var/www/high-aviation-club/current/shared/tmp/log/stderr"
+#environment ENV['RAILS_ENV'] || 'production'
+#pidfile "/var/www/high-aviation-club/current/shared/tmp/pids/puma.pid"
+#stdout_redirect "/var/www/high-aviation-club/current/shared/tmp/log/stdout", "/var/www/high-aviation-club/current/shared/tmp/log/stderr"
 #threads 2, 16
 #workers 2
 #bind "unix:///var/www/high-aviation-club/current/shared/tmp/sockets/puma.sock"
@@ -16,7 +16,7 @@ port        ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
 #
-#environment ENV.fetch("RAILS_ENV") { "development" }
+environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
