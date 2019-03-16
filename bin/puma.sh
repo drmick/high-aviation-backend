@@ -1,7 +1,7 @@
 #! /bin/sh
 PUMA_CONFIG_FILE=/var/www/high-aviation-backend/current/config/puma.rb
-PUMA_PID_FILE=/var/www/high-aviation-backend/shared/tmp/pids/puma.pid
-PUMA_SOCKET=/var/www/high-aviation-backend/shared/tmp/sockets/puma.sock
+PUMA_PID_FILE=/var/www/high-aviation-backend/current/shared/tmp/pids/puma.pid
+PUMA_SOCKET=/var/www/high-aviation-backend/current/shared/tmp/sockets/puma.sock
 
 # check if puma process is running
 puma_is_running() {
