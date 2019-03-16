@@ -2,17 +2,17 @@
 environment ENV['RAILS_ENV'] || 'production'
 pidfile "/var/www/high-aviation-club/current/shared/tmp/pids/puma.pid"
 stdout_redirect "/var/www/high-aviation-club/current/shared/tmp/log/stdout", "/var/www/high-aviation-club/current/shared/tmp/log/stderr"
-threads 2, 16
-workers 2
-bind "unix:///var/www/high-aviation-club/current/shared/tmp/sockets/puma.sock"
-daemonize true
+#threads 2, 16
+#workers 2
+#bind "unix:///var/www/high-aviation-club/current/shared/tmp/sockets/puma.sock"
+#daemonize true
 
-#threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
-#threads threads_count, threads_count
+threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
+threads threads_count, threads_count
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
-#port        ENV.fetch("PORT") { 3000 }
+port        ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
 #
@@ -31,7 +31,7 @@ daemonize true
 # before forking the application. This takes advantage of Copy On Write
 # process behavior so workers use less memory.
 #
-# preload_app!
+#preload_app!
 
 # Allow puma to be restarted by `rails restart` command.
-#plugin :tmp_restart
+plugin :tmp_restart
