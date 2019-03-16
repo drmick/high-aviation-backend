@@ -1,9 +1,12 @@
-# Puma can serve each request in a thread from an internal thread pool.
-# The `threads` method setting takes two numbers: a minimum and maximum.
-# Any libraries that use thread pools should be configured to match
-# the maximum value specified for Puma. Default is set to 5 threads for minimum
-# and maximum; this matches the default thread size of Active Record.
-#
+#!/usr/bin/env puma
+#environment ENV['RAILS_ENV'] || 'production'
+#pidfile "/var/www/high-aviation-club/current/shared/tmp/pids/puma.pid"
+#stdout_redirect "/var/www/high-aviation-club/current/shared/tmp/log/stdout", "/var/www/high-aviation-club/current/shared/tmp/log/stderr"
+#threads 2, 16
+#workers 2
+#bind "unix:///var/www/high-aviation-club/current/shared/tmp/sockets/puma.sock"
+#daemonize true
+
 threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
 threads threads_count, threads_count
 
@@ -28,7 +31,8 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # before forking the application. This takes advantage of Copy On Write
 # process behavior so workers use less memory.
 #
-# preload_app!
+#preload_app!
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
+
