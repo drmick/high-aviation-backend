@@ -1,1 +1,1 @@
-git add . && git commit -m "deploy" && git push origin master && ina deploy:force_unlock && mina deploy
+git add . && git commit -m "deploy" && git push origin master && mina deploy:force_unlock && mina deploy
