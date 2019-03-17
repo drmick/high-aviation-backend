@@ -7,7 +7,7 @@ class Airport
       return {}
     end
     Rails.cache.fetch('airport_' + code, expires_in: 1.months, force: false) do
-      uri = URI.parse('https://aviation-edge.com/v2/public/airportDatabase?key=#85177b-cf6156&codeIataAirport=' + code)
+      uri = URI.parse('https://aviation-edge.com/v2/public/airportDatabase?key=85177b-cf6156&codeIataAirport=' + code)
       http = Net::HTTP.new(uri.host, uri.port)
       request = Net::HTTP::Get.new(uri.request_uri)
       http.use_ssl = true

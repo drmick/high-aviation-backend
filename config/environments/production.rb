@@ -3,7 +3,21 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+  C_SITE_URL = "https://highaviation.ru"
 
+  config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}  # Raises error for missing translations
+  config.action_mailer.default_url_options = { host: "https://highaviation.ru" }
+
+  config.action_mailer.smtp_settings = {
+      :tls => true,
+      address: 'smtp.yandex.ru',
+      port: 465,
+      domain: 'yandex.ru',
+      authentication: 'plain',
+      user_name: "no-reply@highaviation.ru",
+      password: "afw893yfn738f73f",
+  }
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.

@@ -4,6 +4,23 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
+  #   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  C_SITE_URL = "http://localhost:3000"
+  config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}  # Raises error for missing translations
+  config.action_mailer.default_url_options = { host: 'localhost', port: 4000 }
+
+  config.action_mailer.smtp_settings = {
+      :tls => true,
+      address: 'smtp.yandex.ru',
+      port: 465,
+      domain: 'yandex.ru',
+      authentication: 'plain',
+      user_name: "no-reply@highaviation.ru",
+      password: "afw893yfn738f73f",
+  }
+
+
   config.cache_classes = false
 
   # Do not eager load code on boot.
@@ -31,7 +48,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
