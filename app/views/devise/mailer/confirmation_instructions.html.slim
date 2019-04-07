@@ -3,6 +3,6 @@ p
 p
   | Вы можете подтвердить свой почтовый ящик по ссылке:
 p
-  =link_to 'Подтвердить ящик!', "#{C_SITE_URL}/confirmation?confirmation_token=#{@token}"
+  =link_to 'Подтвердить ящик!', "#{C_SITE_URL}/users/confirmation?confirmation_token=#{@token}"
 p
   =render 'devise/footer'

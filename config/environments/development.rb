@@ -8,18 +8,20 @@ Rails.application.configure do
   C_SITE_URL = "http://localhost:3000"
   config.action_mailer.delivery_method = :smtp
   #config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}  # Raises error for missing translations
-  config.action_mailer.default_url_options = { host: 'localhost', port: 4000 }
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 4000 }
+  #
+  # config.action_mailer.smtp_settings = {
+  #     :tls => true,
+  #     address: 'smtp.yandex.ru',
+  #     port: 465,
+  #     domain: 'yandex.ru',
+  #     authentication: 'plain',
+  #     user_name: "no-reply@highaviation.ru",
+  #     password: "afw893yfn738f73f",
+  # }
 
-  config.action_mailer.smtp_settings = {
-      :tls => true,
-      address: 'smtp.yandex.ru',
-      port: 465,
-      domain: 'yandex.ru',
-      authentication: 'plain',
-      user_name: "no-reply@highaviation.ru",
-      password: "afw893yfn738f73f",
-  }
-
+  config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
+  config.action_mailer.raise_delivery_errors = false
 
   config.cache_classes = false
 
