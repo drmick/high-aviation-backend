@@ -6,7 +6,7 @@ class Order < ApplicationRecord
   validates :middle_name, presence: false
   validates :phone, presence: true
   validates :email, presence: true
-  validates :status, presence: true
+  validates :status, presence: true, :inclusion => { :in => %w(new payed fail)}
   validates :flight_number, presence: true
   validates :flight_date, presence: true
   validates :flight_from, presence: true
