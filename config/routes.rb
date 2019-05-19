@@ -8,5 +8,8 @@ Rails.application.routes.draw do
     devise_scope :user do
       get 'users/current', to: 'sessions#show'
     end
+
+    get '/dollar_course', to: 'application#get_dollar_course'
+    get '/get_urik/:text', to: 'application#get_urik'
   end
 end

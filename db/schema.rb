@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_153347) do
+ActiveRecord::Schema.define(version: 2019_05_19_203628) do
 
   create_table "jwt_blacklists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "jti", null: false
@@ -32,6 +32,24 @@ ActiveRecord::Schema.define(version: 2019_04_07_153347) do
     t.string "external_key"
     t.string "guid"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "payer_type"
+    t.string "inn"
+    t.string "kpp"
+    t.string "bic"
+    t.string "ur_name"
+    t.string "account"
+    t.string "corr_account"
+  end
+
+  create_table "passengers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "middle_name"
+    t.integer "order_id"
+    t.boolean "age1"
+    t.boolean "age2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

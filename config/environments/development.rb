@@ -5,6 +5,7 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   #   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  #
   C_SITE_URL = "http://localhost:3000"
   config.action_mailer.delivery_method = :smtp
   #config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}  # Raises error for missing translations
@@ -19,6 +20,7 @@ Rails.application.configure do
   #     user_name: "no-reply@highaviation.ru",
   #     password: "afw893yfn738f73f",
   # }
+
 
   config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
   config.action_mailer.raise_delivery_errors = false
