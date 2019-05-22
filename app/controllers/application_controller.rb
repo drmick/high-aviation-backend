@@ -18,4 +18,19 @@ class ApplicationController < ActionController::API
   def get_urik
     render json: {values: Urik.get_info(params[:text])}
   end
+
+  def get_bank_info
+    bic = params[:bic]
+
+    Rails.cache.fetch('urik', expires_in: 10.days, force: false) do
+      uri = URI.parse('http://www.bik-info.ru/api.html?type=json&bik=' + bic)
+      http = Net::HTTP.new(uri.host, uri.port)
+      request = Net::HTTP::Get.new(uri.request_uri)
+      response = http.request(request)
+      res = JSON.parse(response.body)
+      render json: res
+      return
+    end
+    render json: {values: []}
+  end
 end

@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
     get '/dollar_course', to: 'application#get_dollar_course'
     get '/get_urik/:text', to: 'application#get_urik'
+    get '/get_bank_info/:bic', to: 'application#get_bank_info'
   end
 end
