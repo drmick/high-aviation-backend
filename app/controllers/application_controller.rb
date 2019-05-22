@@ -22,7 +22,7 @@ class ApplicationController < ActionController::API
   def get_bank_info
     bic = params[:bic]
 
-    Rails.cache.fetch('urik', expires_in: 10.days, force: false) do
+    Rails.cache.fetch('banks', expires_in: 10.days, force: false) do
       uri = URI.parse('http://www.bik-info.ru/api.html?type=json&bik=' + bic)
       http = Net::HTTP.new(uri.host, uri.port)
       request = Net::HTTP::Get.new(uri.request_uri)
